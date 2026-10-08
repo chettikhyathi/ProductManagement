@@ -1,70 +1,323 @@
-# Getting Started with Create React App
+# Product Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Product Management System developed using **React.js** for the frontend and **Spring Boot** for the backend.
 
-## Available Scripts
+The application provides CRUD operations for Products, Customers, Orders, and Payments with authentication, role-based authorization, search, pagination, and dashboard features.
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- User Login and Logout
+- Role-based access: ADMIN and USER
+- Product Management
+- Customer Management
+- Order Management
+- Payment Management
+- Add, View, Update and Delete operations
+- Search functionality
+- Pagination
+- Dashboard with record counts
+- REST APIs using Spring Boot
+- MySQL database integration
+- Spring Security
+- BCrypt password encryption
+- Backend authorization
+- CORS configuration
+- Postman API testing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 👥 User Roles
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ADMIN
 
-### `npm test`
+ADMIN users can:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- View Products
+- Add Products
+- Edit Products
+- Delete Products
+- View Customers
+- Add Customers
+- Edit Customers
+- Delete Customers
+- Manage Orders
+- Manage Payments
 
-### `npm run build`
+### USER
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+USER users can:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Login
+- View Products
+- View Customers
+- View Orders
+- View Payments
+- Search records
+- Use pagination
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+USER users cannot add, edit, or delete records.
 
-### `npm run eject`
+## 🛠️ Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React.js
+- JavaScript
+- HTML
+- CSS
+- Axios
+- React Router
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Java
+- Spring Boot
+- Spring Web MVC
+- Spring Data JPA
+- Spring Security
+- BCrypt
+- Maven
 
-## Learn More
+### Database
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- MySQL
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Tools
 
-### Code Splitting
+- Eclipse
+- Visual Studio Code
+- Postman
+- Git
+- GitHub
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📁 Project Structure
 
-### Analyzing the Bundle Size
+### Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```text
+product-frontend
+│
+├── public
+├── src
+│   ├── components
+│   │   ├── ProductList.js
+│   │   ├── CustomerList.js
+│   │   ├── OrderList.js
+│   │   ├── PaymentList.js
+│   │   ├── Navbar.js
+│   │   └── Sidebar.js
+│   │
+│   ├── pages
+│   │   ├── Login.js
+│   │   ├── Dashboard.js
+│   │   ├── AddProducts.js
+│   │   ├── EditProducts.js
+│   │   ├── AddCustomers.js
+│   │   ├── EditCustomers.js
+│   │   ├── AddOrder.js
+│   │   ├── EditOrder.js
+│   │   ├── AddPayment.js
+│   │   └── EditPayment.js
+│   │
+│   ├── services
+│   │   └── api.js
+│   │
+│   ├── App.js
+│   └── App.css
+│
+├── package.json
+└── README.md
+```
 
-### Making a Progressive Web App
+### Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```text
+ProductManagement
+│
+├── src/main/java/com/Vcube/ProductManagement
+│   ├── Config
+│   │   ├── SecurityConfig.java
+│   │   └── UserConfig.java
+│   │
+│   ├── Controllers
+│   │   ├── ProductController.java
+│   │   ├── CustomerController.java
+│   │   ├── OrderController.java
+│   │   └── PaymentController.java
+│   │
+│   ├── Entity
+│   │   ├── Product.java
+│   │   ├── Customer.java
+│   │   ├── Order.java
+│   │   └── Payment.java
+│   │
+│   ├── Repo
+│   │   ├── ProductRepo.java
+│   │   ├── CustomerRepo.java
+│   │   ├── OrderRepo.java
+│   │   └── PaymentRepo.java
+│   │
+│   └── Service
+│       ├── ProductService.java
+│       ├── CustomerService.java
+│       ├── OrderService.java
+│       └── PaymentService.java
+│
+├── src/main/resources
+│   └── application.properties
+│
+└── pom.xml
+```
 
-### Advanced Configuration
+## 🔐 Security
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Spring Security is used to protect backend APIs.
 
-### Deployment
+### Authorization Rules
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| HTTP Method | ADMIN | USER |
+|---|---|---|
+| GET | ✅ | ✅ |
+| POST | ✅ | ❌ |
+| PUT | ✅ | ❌ |
+| DELETE | ✅ | ❌ |
 
-### `npm run build` fails to minify
+Backend authorization was tested using Postman.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔑 Test Users
+
+### ADMIN
+
+```text
+Username: admin
+Password: admin123
+Role: ADMIN
+```
+
+### USER
+
+```text
+Username: user
+Password: user123
+Role: USER
+```
+
+> These credentials are for local development/testing only.
+
+## ▶️ How to Run
+
+### 1. Start Backend
+
+Open the Spring Boot project in Eclipse and run:
+
+```text
+ProductManagementApplication.java
+```
+
+Backend runs on:
+
+```text
+http://localhost:8081
+```
+
+### 2. Start Frontend
+
+Open the frontend terminal:
+
+```powershell
+npm install
+```
+
+Then:
+
+```powershell
+npm start
+```
+
+Frontend runs on:
+
+```text
+http://localhost:3001
+```
+
+## 🔗 Main API Operations
+
+### Product
+
+```text
+GET     /getProductList
+POST    /createProduct
+PUT     /updateProduct/{id}
+DELETE  /deleteProduct/{id}
+```
+
+### Customer
+
+```text
+GET     /getCustomerList
+POST    /createCustomer
+PUT     /updateCustomer/{id}
+DELETE  /deleteCustomer/{id}
+```
+
+### Order
+
+```text
+GET     /getOrderList
+POST    /createOrder
+PUT     /updateOrder/{id}
+DELETE  /deleteOrder/{id}
+```
+
+### Payment
+
+```text
+GET     /getPaymentList
+POST    /createPayment
+PUT     /updatePayment/{id}
+DELETE  /deletePayment/{id}
+```
+
+> API endpoint names may vary depending on the controller implementation.
+
+## 🧪 Testing
+
+The REST APIs were tested using **Postman**.
+
+Security testing included:
+
+- USER GET → Allowed
+- USER POST → Blocked
+- USER PUT → Blocked
+- USER DELETE → Blocked
+- ADMIN POST → Allowed
+- ADMIN PUT → Allowed
+- ADMIN DELETE → Allowed
+
+## 📌 GitHub Branches
+
+The project is maintained using two branches:
+
+```text
+master  → React Frontend
+backend → Spring Boot Backend
+```
+
+## 🎯 Project Objective
+
+The objective of this project is to build a complete full-stack management application that demonstrates:
+
+- Frontend development using React
+- Backend development using Spring Boot
+- REST API development
+- Database integration
+- Authentication and authorization
+- CRUD operations
+- Role-based access control
+- API testing
+
+## 👩‍💻 Developer
+
+**Khyathi Chetti**
+
+B.Tech – Cyber Security
+
+Technologies: Java, Spring Boot, React.js, SQL, MySQL
